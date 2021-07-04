@@ -14,9 +14,11 @@ import { CustomerService } from './services/customers/customer.service';
 import { OrderService } from './services/orders/order.service';
 import { ProductService } from './services/products/product.service';
 import { UserService } from './services/users/user.service';
+import { ProductsModule } from './products/products.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [],
+  imports: [ProductsModule, UsersModule],
   controllers: [
     AppController,
     UserController,

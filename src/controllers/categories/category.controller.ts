@@ -1,14 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 
 @Controller('categories')
 export class CategoryController {
   @Get()
-  getCategories() {
+  getCategories(
+    @Query('limit') limit = 50,
+    @Query('offset') offset = 0
+  ) {
     return null;
   }
 
-  @Get('/:id')
-  getCategory(id: string) {
+  @Get(':id')
+  getCategory(
+    @Param('id') id: number
+  ) {
     return null;
   }
 }
